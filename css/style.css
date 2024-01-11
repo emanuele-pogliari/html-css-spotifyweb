@@ -11,7 +11,7 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Circular Spotify Text Medium', sans-serif;
 }
 
 #window {
@@ -41,14 +41,12 @@ body {
     height: calc(100vh - 90px);
 
     overflow-y: scroll;
-
-    background-color: #141922;
-
 }
 
 .main-window {
     padding-top: 90px;
-    background-color: aliceblue;
+    background-color: #141922;
+    height: 100%;
 }
 
 .upgrade {
@@ -79,4 +77,19 @@ body {
     background-color: black;
     height: 90px;
     width: 100%;
+}
+
+/* main window */
+.nav-list {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    list-style-type: none;
+    gap: 25px;
+    margin: 25px 0 40px;
+}
+
+a {
+    text-decoration: none;
+    color: #7D7F84;
 }
