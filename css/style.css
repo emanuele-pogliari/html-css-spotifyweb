@@ -142,3 +142,45 @@ strong {
     display: block;
     padding-bottom: 30px;
 }
+
+@media screen and (max-width:991px) {
+    .album-container {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: calc(100% / 4 - 15px);
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .card {
+        width: calc(100% / 2 - 15px);
+    }
+
+    .album-container {
+        flex-wrap: wrap;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .sidebar {
+        min-width: 50px;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+    }
+
+    .upgrade {
+        width: calc(100% - 50px);
+    }
+}
