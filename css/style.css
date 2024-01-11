@@ -12,6 +12,7 @@
 
 body {
     font-family: 'Circular Spotify Text Medium', sans-serif;
+    background-color: #141922;
 }
 
 #window {
@@ -44,7 +45,7 @@ body {
 }
 
 .main-window {
-    background-color: #141922;
+
     height: 100vh;
 }
 
@@ -129,4 +130,9 @@ h4 {
 
 img {
     width: 100%;
+}
+
+
+.album-container:nth-of-type(3) img {
+    border-radius: 50%;
 }
