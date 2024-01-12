@@ -195,7 +195,7 @@ strong {
 /* sidebar */
 
 .second-menu {
-    height: calc(100% - 90px);
+    /* height: calc(100% - 90px); */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -271,4 +271,116 @@ li * {
     hr {
         display: none;
     }
+}
+
+
+/* player */
+
+.player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 50px;
+}
+
+
+/* test flex-container */
+
+.flex-container {
+    width: calc(100% / 5);
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.flex-container:nth-of-type(2) {
+    flex-grow: 1;
+}
+
+/* test first container */
+
+.info-song-played>div {
+    width: 70px;
+
+}
+
+.sound-controls>div {
+    justify-content: space-evenly;
+    background-color: green;
+    width: 20px;
+}
+
+.player-controls {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.player .fa-solid,
+.player .fa-regular {
+    color: #FFF;
+}
+
+.player .fa-solid,
+.player .fa-regular {
+    font-size: 15px;
+}
+
+.player .fa-circle-play {
+    font-size: 30px;
+}
+
+
+/* test progress bar */
+/* 
+.volume-bar {
+    flex-grow: 1;
+} */
+
+.sound-controls {
+    gap: 15px
+}
+
+.favourite .fa-regular {
+    color: grey;
+}
+
+.media-time {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.media-time p {
+    font-size: 9px;
+    color: white;
+}
+
+.media-time .progress-bar {
+    width: 30vw;
+    height: 4px;
+    background-color: grey;
+    border-radius: 25px;
+
+}
+
+.name-and-artist {
+    font-size: 14px;
+    color: white;
+}
+
+.name-song {
+    color: grey;
+    font-size: 12px;
 }
