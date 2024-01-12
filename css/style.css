@@ -28,6 +28,10 @@ body {
 }
 
 
+ul {
+    list-style-type: none;
+}
+
 /* sidebar */
 .sidebar {
     width: 230px;
@@ -87,7 +91,6 @@ body {
     display: flex;
     justify-content: center;
     text-transform: uppercase;
-    list-style-type: none;
     gap: 25px;
     margin: 25px auto 40px;
 }
@@ -191,11 +194,81 @@ strong {
 
 /* sidebar */
 
-
-
 .second-menu {
     height: calc(100% - 90px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.first-menu .logo img:nth-of-type(1) {
+    width: 130px;
+}
+
+.first-menu .logo {
+    padding-bottom: 30px;
+}
+
+.first-menu img {
+    width: 25px;
+}
+
+li * {
+    vertical-align: middle;
+}
+
+.first-menu li {
+    padding-bottom: 15px;
+}
+
+.first-menu li span {
+    padding-left: 5px;
+}
+
+.toggle-icons {
+    display: none;
+}
+
+
+.playlist li:not(:first-child) {
+    padding-bottom: 10px;
+
+}
+
+.add-playlist-btn {
+    padding: 9px 16px;
+    background-color: grey;
+}
+
+.playlist .create-playlist {
+    padding: 25px 0 40px;
+}
+
+
+
+/* test responsive sidebar */
+
+@media screen and (max-width:576px) {
+    .toggle-icons {
+        display: block;
+    }
+
+
+    .toggle-icons li {
+        padding-bottom: 15px;
+    }
+
+    .first-menu {
+        display: none;
+    }
+
+    .playlist {
+        display: none;
+    }
+
+    .install-app span:nth-of-type(2),
+    .username span:nth-of-type(2),
+    hr {
+        display: none;
+    }
 }
