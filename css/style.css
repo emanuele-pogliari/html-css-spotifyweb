@@ -28,8 +28,6 @@ ul {
 /* sidebar */
 .sidebar {
     width: 230px;
-    min-width: 230px;
-
     padding: 20px 20px 8px;
 
     background-color: #000;
@@ -159,14 +157,49 @@ strong {
 }
 
 @media screen and (max-width:575px) {
+    .main-window {
+        width: calc(100% - 50px);
+    }
+
     .sidebar {
-        min-width: 50px;
+        max-width: 50px;
     }
 
     .nav-list {
         flex-wrap: wrap;
     }
+
+
+    /* TEST SIDEBAR */
+    .toggle-icons {
+        display: block;
+    }
+
+
+    .toggle-icons li {
+        padding-bottom: 15px;
+    }
+
+    .first-menu {
+        display: none;
+    }
+
+    .playlist {
+        display: none;
+    }
+
+    .install-app span:nth-of-type(2),
+    .username span:nth-of-type(2),
+    hr {
+        display: none;
+    }
+
+    .upgrade {
+        width: calc(100% - 50px);
+    }
+
 }
+
 
 
 /* sidebar */
@@ -220,34 +253,6 @@ li * {
     padding: 25px 0 40px;
 }
 
-
-
-/* test responsive sidebar */
-
-@media screen and (max-width:576px) {
-    .toggle-icons {
-        display: block;
-    }
-
-
-    .toggle-icons li {
-        padding-bottom: 15px;
-    }
-
-    .first-menu {
-        display: none;
-    }
-
-    .playlist {
-        display: none;
-    }
-
-    .install-app span:nth-of-type(2),
-    .username span:nth-of-type(2),
-    hr {
-        display: none;
-    }
-}
 
 
 /* player */
