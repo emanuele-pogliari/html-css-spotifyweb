@@ -19,7 +19,7 @@
         <div class="sidebar">
             <ul class="first-menu">
                 <li class="logo"><img src="./img/logo.svg" alt=""></li>
-                <li><img src="./img/home.svg"><span>Home</span></li>
+                <li class="home"><img src="./img/home.svg"><span>Home</span></li>
                 <li><img src="./img/search.svg"><span>Cerca</span></li>
                 <li><img src="./img/libreria.svg"><span>La tua libreria</span></li>
             </ul>
@@ -34,7 +34,7 @@
             <div class="second-menu">
                 <ul class="playlist">
                     <li><span>Playlist</span></li>
-                    <li class="create-playlist"><span><span class="add-playlist-btn">+</span> Crea Playlist</span>
+                    <li class="create-playlist"><span><strong class="add-playlist-btn">+</strong> Crea Playlist</span>
                     </li>
                     <li><span>Nome Playlist</span></li>
                     <li><span>Nome Playlist</span></li>
@@ -54,12 +54,14 @@
         </div>
 
         <main class="main-window">
-            <div class="upgrade">Effettua l'upgrade
+            <div class="upgrade"><button>Effettua l'upgrade</button>
 
             </div>
 
             <ul class="nav-list">
-                <li><a href="">in evidenza</a></li>
+                <li><a href="">in evidenza</a>
+                    <hr>
+                </li>
                 <li><a href="">podcast</a></li>
                 <li><a href="">classifiche</a></li>
                 <li><a href="">generi e mood</a></li>
@@ -161,24 +163,28 @@
                 </div>
 
             </div>
+            <button></button>
         </main>
     </div>
 
     <div class="player">
 
         <div class="flex-container info-song-played">
-            <div class="cover-album">
-                <img src="./img/sinister.jpeg" alt="">
+
+            <div class="info-playback">
+                <div class="cover-album">
+                    <img src="./img/sinister.jpeg" alt="">
+                </div>
+
+                <div class="name-and-artist">
+                    <p class="name-artist">Sinister</p>
+                    <p class="name-song">Brano name</p>
+                </div>
             </div>
 
-            <div class="name-and-artist">
-                <p class="name-artist">Sinister</p>
-                <p class="name-song">Brano name</p>
-            </div>
             <div class="favourite">
-                <i class="fa-regular fa-folder"></i>
-
                 <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-folder"></i>
             </div>
         </div>
 

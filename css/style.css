@@ -10,6 +10,11 @@
     src: url(../fonts/CircularSpotifyText-Medium.otf);
 }
 
+@font-face {
+    font-family: 'Circular Spotify Text Bold';
+    src: url(../fonts/CircularSpotifyText-Bold.otf);
+}
+
 body {
     font-family: 'Circular Spotify Text Medium', sans-serif;
     background-color: #141922;
@@ -57,7 +62,8 @@ li * {
 
 .sidebar {
     width: 230px;
-    padding: 20px 20px 8px;
+    height: 100%;
+    padding-top: 20px;
 
     background-color: #000;
     color: white;
@@ -68,7 +74,7 @@ li * {
 }
 
 .first-menu .logo {
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 .first-menu img {
@@ -81,6 +87,7 @@ li * {
 
 .first-menu li span {
     padding-left: 5px;
+    font-size: 0.9e9;
 }
 
 .toggle-icons {
@@ -101,10 +108,17 @@ li * {
 .add-playlist-btn {
     padding: 9px 16px;
     background-color: grey;
+    display: inline;
 }
 
 .playlist .create-playlist {
     padding: 25px 0 40px;
+}
+
+ul.playlist:first-child {
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 700;
 }
 
 /* MAIN WINDOW */
@@ -124,6 +138,15 @@ li * {
     text-transform: uppercase;
     gap: 25px;
     margin: 25px auto 40px;
+}
+
+.nav-list hr {
+
+    border: #ADFF2F 1px solid;
+    width: 30%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .card {
@@ -174,6 +197,15 @@ li * {
     text-transform: uppercase;
 }
 
+.upgrade button {
+    background-color: #0000;
+    color: white;
+    text-transform: uppercase;
+    border: 1px solid white;
+    padding: 15px 50px;
+    border-radius: 25px;
+}
+
 
 /* PLAYER */
 
@@ -193,7 +225,7 @@ li * {
 /* test flex-container */
 
 .flex-container {
-    width: calc(100% / 5);
+    width: calc(100% / 6);
     padding-left: 10px;
     padding-right: 10px;
     display: flex;
@@ -208,18 +240,18 @@ li * {
 
 /* test first container */
 
-.info-song-played>div {
+.cover-album {
     width: 40px;
 }
 
 .info-song-played img {
     width: 100%;
+    min-width: 40px;
 }
 
-.sound-controls>div {
-    justify-content: space-evenly;
-    background-color: green;
-    width: 20px;
+.info-song-played {
+    justify-content: space-between;
+    gap: 15px;
 }
 
 .player-controls {
@@ -256,12 +288,27 @@ li * {
     flex-grow: 1;
 } */
 
+.volume-bar {
+    width: 115px;
+    min-width: 115px;
+    height: 4px;
+    background-color: grey;
+    border-radius: 25px;
+}
+
 .sound-controls {
+    justify-content: flex-end;
     gap: 15px
+}
+
+.favourite {
+    display: flex;
+    gap: 7px;
 }
 
 .favourite .fa-regular {
     color: grey;
+    font-size: 15px;
 }
 
 .media-time {
@@ -284,16 +331,23 @@ li * {
 }
 
 .name-and-artist {
-    font-size: 14px;
+    font-size: 12px;
     color: white;
 }
 
 .name-song {
     color: grey;
-    font-size: 12px;
+    font-size: 11px;
 }
 
+/* TEST */
 
+.info-playback {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
 
 
 
@@ -331,6 +385,7 @@ li * {
     .nav-list {
         flex-wrap: wrap;
     }
+
 }
 
 @media screen and (max-width:575px) {
@@ -375,4 +430,53 @@ li * {
         width: calc(100% - 50px);
     }
 
+
+
+
+}
+
+
+/* test colored border sidebar elements */
+
+.sidebar li {
+    padding: 5px 16px;
+}
+
+.sidebar .home {
+    border-left: 4px solid #ADFF2F;
+}
+
+.sidebar li:not(.home) {
+    padding-left: 20px;
+}
+
+
+
+
+
+button {
+    color: black;
+    background-color: white;
+    border: none;
+    padding: 7px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    position: relative;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(239, 239, 240, .6);
+    transition: opacity .2s;
+    opacity: 0;
+    z-index: 2;
+}
+
+button:hover::before {
+    opacity: 1;
 }
