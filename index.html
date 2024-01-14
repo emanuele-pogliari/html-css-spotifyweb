@@ -40,20 +40,21 @@
 
                 <div class="playlist">
                     <p>Playlist</p>
+                    <div class="create-playlist">
+                        <div class="playlist-btn"><strong class="plus">+</strong></div><span>Crea Playlist</span>
+                    </div>
 
-                    <ul>
-                        <li class="create-playlist">
-                            <div class="playlist-btn"><strong class="plus">+</strong></div><span>Crea Playlist</span>
-                        </li>
-                        <li><span>Nome Playlist</span></li>
-                        <li><span>Nome Playlist</span></li>
-                        <li><span>Nome Playlist</span></li>
-                        <li><span>Nome Playlist</span></li>
-                        <li><span>Nome Playlist</span></li>
-                        <li><span>Nome Playlist</span></li>
-                        <li><span>Nome Playlist</span></li>
-
-                    </ul>
+                    <div class="test-scroll">
+                        <ul>
+                            <li><span>Nome Playlist</span></li>
+                            <li><span>Nome Playlist</span></li>
+                            <li><span>Nome Playlist</span></li>
+                            <li><span>Nome Playlist</span></li>
+                            <li><span>Nome Playlist</span></li>
+                            <li><span>Nome Playlist</span></li>
+                            <li><span>Nome Playlist</span></li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="info-user">
@@ -89,6 +90,7 @@
                 <div class="card">
                     <div class="album-img">
                         <img src="./img/metal_lifting.jpg" alt="">
+                        <i class="fa-regular fa-circle-play"></i>
                     </div>
                     <h3>Heavy Metal</h3>
                     <h4>Subtitle</h4>
@@ -97,6 +99,7 @@
                 <div class="card">
                     <div class="album-img">
                         <img src="./img/stranger.jpeg" alt="">
+                        <i class="fa-regular fa-circle-play"></i>
                     </div>
                     <h3>Stranger Things, Vol. 1 (a Netflix Original Series Soundtrack)</h3>
                     <h4>Kyle Dixon & Michael Stein</h4>
@@ -105,6 +108,7 @@
                 <div class="card">
                     <div class="album-img">
                         <img src="./img/aquietplace.jpeg" alt="">
+                        <i class="fa-regular fa-circle-play"></i>
                     </div>
                     <h3>A quiet place</h3>
                     <h4>Subtitle</h4>
@@ -113,6 +117,7 @@
                 <div class="card">
                     <div class="album-img">
                         <img src="./img/split.jpeg" alt="">
+                        <i class="fa-regular fa-circle-play"></i>
                     </div>
                     <h3>Split</h3>
                     <h4>Subtitle</h4>
@@ -121,6 +126,7 @@
                 <div class="card">
                     <div class="album-img">
                         <img src="./img/cure.jpeg" alt="">
+                        <i class="fa-regular fa-circle-play"></i>
                     </div>
                     <h3>A cure for wellness</h3>
                     <h4>Subtitle</h4>
@@ -129,6 +135,7 @@
                 <div class="card">
                     <div class="album-img">
                         <img src="./img/sinister.jpeg" alt="">
+                        <i class="fa-regular fa-circle-play"></i>
                     </div>
                     <h3>Sinister</h3>
                     <h4>Subtitle</h4>
@@ -176,6 +183,7 @@
                 </div>
 
             </div>
+
         </main>
     </div>
 
@@ -206,7 +214,7 @@
             <div class="controls">
                 <i class="fa-solid fa-shuffle"></i>
                 <i class="fa-solid fa-backward-step"></i>
-                <i class="fa-regular fa-circle-play"></i>
+                <i onclick="pincoPallino()" class="play fa-regular fa-circle-play"></i>
                 <i class="fa-solid fa-forward-step"></i>
                 <i class="fa-solid fa-arrow-rotate-right"></i>
             </div>
@@ -241,6 +249,13 @@
     </div>
 
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        function pincoPallino() {
+            document.querySelector(".play-progress").style.width = "25vw";
+        }
+    </script>
 </body>
 
 </html>
