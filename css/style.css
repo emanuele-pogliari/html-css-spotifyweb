@@ -82,6 +82,10 @@ li:not(.home, .logo),
 
     background-color: #000;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 
 /* green side border */
@@ -107,13 +111,12 @@ li:not(.home, .logo),
     margin-bottom: 25px;
 }
 
-.first-menu .logo img:nth-of-type(1) {
+.logo img {
     width: 130px;
 }
 
-.sidebar .first-menu .logo {
-    padding-top: 20px;
-    padding-bottom: 20px;
+.sidebar .logo {
+    padding: 20px;
 }
 
 .first-menu img {
@@ -136,18 +139,6 @@ li:not(.home, .logo),
 }
 
 /* end */
-
-
-/* container second menu */
-
-.second-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* playlist */
-
 
 
 /* BUTTON PLAYLIST */
@@ -193,6 +184,8 @@ li:not(.home, .logo),
     padding-top: 90px;
     padding-left: 20px;
     padding-right: 20px;
+    background-image: linear-gradient(#523b9f, #1f173d, #15131d, #121212);
+    /* background-image: linear-gradient(#359351, #2a5a38, #050806, #121212); */
 }
 
 .nav-list {
@@ -256,9 +249,11 @@ li:not(.home, .logo),
 
     text-align: right;
 
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.1);
     color: white;
     text-transform: uppercase;
+
+    backdrop-filter: blur(5px);
 }
 
 .upgrade button {
@@ -287,6 +282,9 @@ li:not(.home, .logo),
     gap: 50px;
     position: fixed;
     width: 100%;
+
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 
@@ -294,11 +292,8 @@ li:not(.home, .logo),
 /* test player flex-container */
 
 .flex-container {
-    width: calc(100% / 6);
-    padding-left: 10px;
-    padding-right: 10px;
+    width: calc(100% / 4);
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
 }
@@ -313,15 +308,15 @@ li:not(.home, .logo),
     width: 40px;
 }
 
-.info-song-played img {
-    width: 100%;
-    min-width: 40px;
-}
-
 .info-song-played {
-    justify-content: space-between;
     gap: 15px;
 }
+
+.info-song-played img {
+    width: 100%;
+    min-width: 50px;
+}
+
 
 .favourite i {
     font-size: 20px;
@@ -336,8 +331,7 @@ li:not(.home, .logo),
 
 .info-playback {
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
 }
 
@@ -389,23 +383,20 @@ li:not(.home, .logo),
 
 
 /* color player icons */
-.player i {
-    color: #FFF;
-}
 
 .player i {
     font-size: 15px;
+    color: #FFF;
 }
 
 .player .fa-circle-play {
     font-size: 30px;
 }
 
-
 /* text flex container right */
 
 .volume-bar {
-    width: 5vw;
+    width: 10vw;
     height: 4px;
     background-color: grey;
     border-radius: 25px;
@@ -413,7 +404,7 @@ li:not(.home, .logo),
 
 .sound-controls {
     justify-content: flex-end;
-    gap: 15px
+    gap: 10px
 }
 
 
@@ -474,7 +465,8 @@ li:not(.home, .logo),
         padding-bottom: 15px;
     }
 
-    .first-menu {
+    .first-menu,
+    .logo {
         display: none;
     }
 
@@ -492,17 +484,6 @@ li:not(.home, .logo),
         width: calc(100% - 50px);
     }
 
-    .second-menu {
-        text-align: center;
-    }
-
-    .second-menu .info-user {
-        padding: 0;
-    }
-
-    .second-menu .info-user img {
-        margin: 0;
-    }
 }
 
 /* END RESPONSIVE */
@@ -547,13 +528,6 @@ li:not(.home, .logo),
     vertical-align: middle;
 }
 
-.second-menu .info-user {
-    justify-self: flex-end;
-}
-
-
-
-
 
 /* TEST PLAYLIST SPACES AND BUTTON + */
 
@@ -571,14 +545,6 @@ li:not(.home, .logo),
     font-family: 'Circular Spotify Text Bold';
     font-weight: bold;
 }
-
-
-
-
-
-
-
-
 
 /* test slider */
 
@@ -660,12 +626,8 @@ li:hover,
 }
 
 
-/* playback simulation */
-
-
-
-/* scrollbar test */
-.second-menu .test-scroll {
+/* scrollbar */
+.scroll {
     height: 150px;
     overflow-y: auto;
 }
@@ -677,7 +639,6 @@ li:hover,
 }
 
 
-
 .home {
     filter: invert(0) brightness(0.8);
     transition: all 0.2s;
@@ -686,7 +647,6 @@ li:hover,
 .home:hover {
     filter: brightness(1);
 }
-
 
 
 /* play on album photos */
@@ -719,12 +679,3 @@ li:hover,
 .album-img:hover .fa-circle-play {
     opacity: 1;
 }
-
-
-
-.upgrade {
-    backdrop-filter: blur(5px);
-}
-
-
-/* progress bar simulation */
