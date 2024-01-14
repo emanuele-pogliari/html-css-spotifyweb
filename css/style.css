@@ -35,7 +35,7 @@ ul {
 
 a {
     text-decoration: none;
-    color: #7C7E83;
+    color: white
 }
 
 h2 {
@@ -47,7 +47,7 @@ h4 {
     color: #7C7E83
 }
 
-strong {
+.main-window strong {
     color: #7C7E83;
     display: block;
     padding-bottom: 30px;
@@ -57,23 +57,37 @@ li * {
     vertical-align: middle;
 }
 
+hr {}
+
+/* set opacity of hover element */
+li:not(.home, .logo, .playlist-btn),
+.install-app span,
+.player .favourite i {
+    opacity: 0.4;
+    transition: opacity .2s;
+}
+
 
 /* SIDEBAR */
 
 .sidebar {
     width: 230px;
     height: 100%;
-    padding-top: 20px;
 
     background-color: #000;
     color: white;
+}
+
+.first-menu {
+    margin-bottom: 25px;
 }
 
 .first-menu .logo img:nth-of-type(1) {
     width: 130px;
 }
 
-.first-menu .logo {
+.sidebar .first-menu .logo {
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
@@ -102,18 +116,17 @@ li * {
 
 .playlist li:not(:first-child) {
     padding-bottom: 10px;
-
+    font-size: 15px;
 }
 
 .add-playlist-btn {
-    padding: 9px 16px;
     background-color: grey;
+    color: black;
     display: inline;
+    font-size: 30px;
+    padding: 10px
 }
 
-.playlist .create-playlist {
-    padding: 25px 0 40px;
-}
 
 ul.playlist:first-child {
     text-transform: uppercase;
@@ -218,6 +231,8 @@ ul.playlist:first-child {
     height: 90px;
 
     gap: 50px;
+    position: fixed;
+    width: 100%;
 }
 
 
@@ -267,8 +282,9 @@ ul.playlist:first-child {
     align-items: center;
 }
 
-.player .fa-solid,
-.player .fa-regular {
+.player .controls .fa-solid,
+.player .controls .fa-regular,
+.player .sound-controls {
     color: #FFF;
 }
 
@@ -281,6 +297,11 @@ ul.playlist:first-child {
     font-size: 30px;
 }
 
+.favourite i {
+    opacity: .4;
+    color: white;
+    transition: opacity .4s;
+}
 
 /* test progress bar */
 /* 
@@ -307,7 +328,6 @@ ul.playlist:first-child {
 }
 
 .favourite .fa-regular {
-    color: grey;
     font-size: 15px;
 }
 
@@ -323,6 +343,7 @@ ul.playlist:first-child {
 }
 
 .media-time .progress-bar {
+    position: relative;
     width: 25vw;
     height: 4px;
     background-color: grey;
@@ -420,8 +441,8 @@ ul.playlist:first-child {
         display: none;
     }
 
-    .install-app span:nth-of-type(2),
-    .username span:nth-of-type(2),
+    .install-app span,
+    .username span,
     hr {
         display: none;
     }
@@ -430,15 +451,24 @@ ul.playlist:first-child {
         width: calc(100% - 50px);
     }
 
+    .second-menu {
+        text-align: center;
+    }
 
+    .second-menu .info-user {
+        padding: 0;
+    }
 
+    .second-menu .info-user img {
+        margin: 0;
+    }
 
 }
 
 
 /* test colored border sidebar elements */
 
-.sidebar li {
+.sidebar .first-menu li {
     padding: 5px 16px;
 }
 
@@ -446,7 +476,7 @@ ul.playlist:first-child {
     border-left: 4px solid #ADFF2F;
 }
 
-.sidebar li:not(.home) {
+.sidebar .first-menu li:not(.home) {
     padding-left: 20px;
 }
 
@@ -454,7 +484,7 @@ ul.playlist:first-child {
 
 
 
-button {
+/* button {
     color: black;
     background-color: white;
     border: none;
@@ -479,4 +509,161 @@ button::before {
 
 button:hover::before {
     opacity: 1;
+} */
+
+
+/* TEST OVERFLOW PLAYLIST SIDEBAR */
+
+
+/* TEST ICONS POSITION */
+
+.info-user {
+    padding: 20px;
+}
+
+
+.info-user hr {
+    border-width: 0.5px;
+    margin: 10px 0;
+}
+
+.install-app img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    filter: invert(0) brightness(0.5);
+}
+
+.username img {
+    width: 25px;
+    height: 25px;
+    background-color: #7C7E83;
+    filter: invert(0) brightness(1);
+    border-radius: 50px;
+    margin-right: 5px;
+}
+
+.username *,
+.install-app * {
+    vertical-align: middle;
+}
+
+.second-menu .info-user {
+    justify-self: flex-end;
+}
+
+
+
+
+
+/* TEST PLAYLIST SPACES AND BUTTON + */
+
+.playlist {
+    padding-left: 20px;
+}
+
+.playlist .create-playlist {
+    margin: 12px 0 20px;
+}
+
+.playlist p {
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-family: 'Circular Spotify Text Bold';
+    font-weight: bold;
+}
+
+
+
+
+
+/* TEST BUTTON PLAYLIST */
+
+.playlist-btn {
+    display: inline-block;
+    position: relative;
+    width: 37px;
+    height: 37px;
+    background-color: gray;
+    margin-right: 10px;
+}
+
+.plus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 30px;
+}
+
+
+
+/* test slider */
+
+/* PLAYER CONTROLS */
+
+.slider-pointer {
+    display: none;
+
+}
+
+/* Progress media */
+
+.play-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    background-color: white;
+    height: 4px;
+    border-radius: 2px;
+}
+
+/* hover effects */
+
+/* PLAYER CONTROLS */
+/* progress bar */
+
+.progress-bar:hover {
+    cursor: pointer;
+}
+
+.play-progress:hover {
+    background-color: #ADFF2F;
+}
+
+.slider-pointer:hover {
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    top: 2px;
+    left: calc(100% - 5px);
+    z-index: 3;
+}
+
+
+.volume-bar {
+    position: relative;
+}
+
+
+
+li:hover,
+.install-app span:hover,
+.favourite i:hover {
+    color: white;
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+
+.favourite {
+    display: flex;
+    flex-wrap: wrap;
 }
