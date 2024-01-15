@@ -65,7 +65,6 @@ li:not(.home, .logo),
 
 /* end common elements */
 
-
 /* MAIN CONTAINER */
 
 .container {
@@ -106,12 +105,10 @@ li:not(.home, .logo),
 }
 
 .logo .small-logo {
-    width: 100%;
     display: none;
 }
 
 /* end */
-
 
 /* container first menu */
 
@@ -119,8 +116,8 @@ li:not(.home, .logo),
     margin-bottom: 25px;
 }
 
-.logo img {
-    width: 130px;
+.logo {
+    width: 100%
 }
 
 .sidebar .logo {
@@ -145,7 +142,6 @@ li:not(.home, .logo),
 }
 
 /* end */
-
 
 /* BUTTON PLAYLIST */
 
@@ -190,6 +186,27 @@ li:not(.home, .logo),
     color: black;
     font-size: 30px;
 
+}
+
+.username *,
+.install-app * {
+    vertical-align: middle;
+}
+
+
+.playlist {
+    padding-left: 20px;
+}
+
+.playlist .create-playlist {
+    margin: 12px 0 20px;
+}
+
+.playlist p {
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-family: 'Circular Spotify Text Bold';
+    font-weight: bold;
 }
 
 /* MAIN WINDOW */
@@ -294,7 +311,6 @@ li:not(.home, .logo),
     cursor: pointer;
 }
 
-
 /* PLAYER */
 
 .player {
@@ -342,14 +358,6 @@ li:not(.home, .logo),
     min-width: 50px;
 }
 
-
-.favourite i {
-    transition: opacity .4s;
-
-    font-size: 20px;
-    opacity: .4;
-}
-
 .favourite {
     display: flex;
     gap: 7px;
@@ -369,8 +377,8 @@ li:not(.home, .logo),
 .name-song {
     color: grey;
     font-size: 11px;
+    cursor: pointer;
 }
-
 
 /* test flex container center */
 
@@ -409,7 +417,6 @@ li:not(.home, .logo),
 
 }
 
-
 /* color player icons */
 
 .player i {
@@ -435,7 +442,6 @@ li:not(.home, .logo),
     justify-content: flex-end;
     gap: 10px
 }
-
 
 /* RESPONSIVE */
 
@@ -465,7 +471,6 @@ li:not(.home, .logo),
     .nav-list {
         flex-wrap: wrap;
     }
-
 }
 
 @media screen and (max-width:575px) {
@@ -475,29 +480,35 @@ li:not(.home, .logo),
 
     .sidebar {
         max-width: 50px;
+        padding-top: 20px;
     }
 
     .nav-list {
         flex-wrap: wrap;
     }
 
+    .logo .small-logo {
+        display: block;
+    }
 
-    /* TEST SIDEBAR */
+    .sidebar .logo {
+        padding: 0px 5px 20px;
+    }
+
     .toggle-icons {
         display: block;
     }
 
-
     .toggle-icons li {
-        padding-bottom: 15px;
+        padding: 20px 6px 10px;
     }
 
     .first-menu,
-    .logo,
+    .big-logo,
     .playlist,
     .install-app span,
     .username span,
-    hr {
+    .divisor {
         display: none;
     }
 
@@ -505,18 +516,24 @@ li:not(.home, .logo),
         width: calc(100% - 50px);
     }
 
-    .logo .small-logo {
-        display: inline-block;
+    .sidebar .info-user {
+        text-align: center;
+        padding: 0 0 10px;
+    }
+
+    .info-user .username img {
+        margin: 0;
+    }
+
+    .info-user .install-app img {
+        margin: 0;
+        padding-right: 2px;
+        margin-bottom: 10px;
     }
 
 }
 
 /* END RESPONSIVE */
-
-
-
-/* TEST OVERFLOW PLAYLIST SIDEBAR */
-
 
 /* TEST ICONS POSITION */
 
@@ -524,58 +541,34 @@ li:not(.home, .logo),
     padding: 20px;
 }
 
-
-.info-user hr {
-    margin: 10px 0;
-
-    border: none;
+.info-user .divisor {
+    margin: 10px 0 11px;
+    width: 100%;
+    height: 0.5px;
     background-color: #7C7E83;
 }
+
+.install-app img,
+.username img {
+    margin-right: 5px;
+
+    filter: invert(0) brightness(1);
+}
+
 
 .install-app img {
     width: 20px;
     height: 20px;
 
-    margin-right: 5px;
-
-    filter: invert(0) brightness(0.5);
 }
 
 .username img {
-    margin-right: 5px;
-
     width: 25px;
     height: 25px;
 
-    filter: invert(0) brightness(1);
     background-color: #7C7E83;
     border-radius: 50px;
 }
-
-.username *,
-.install-app * {
-    vertical-align: middle;
-}
-
-
-/* TEST PLAYLIST SPACES AND BUTTON + */
-
-.playlist {
-    padding-left: 20px;
-}
-
-.playlist .create-playlist {
-    margin: 12px 0 20px;
-}
-
-.playlist p {
-    text-transform: uppercase;
-    font-size: 0.9em;
-    font-family: 'Circular Spotify Text Bold';
-    font-weight: bold;
-}
-
-/* test slider */
 
 /* PLAYER CONTROLS */
 
@@ -604,12 +597,14 @@ li:not(.home, .logo),
     transition: width 5s linear;
 }
 
-
-
 /* hover effects */
 
 /* PLAYER CONTROLS */
 /* progress bar */
+
+.name-song:hover {
+    text-decoration: underline;
+}
 
 .progress-bar:hover,
 .volume-bar:hover {
@@ -631,7 +626,6 @@ li:not(.home, .logo),
 }
 
 
-
 li:hover,
 .install-app:hover,
 .favourite i:hover,
@@ -641,13 +635,10 @@ li:hover,
     cursor: pointer;
 }
 
-
-
 .favourite {
     display: flex;
     flex-wrap: wrap;
 }
-
 
 /* upgrade btn hover */
 .upgrade button:hover {
@@ -656,19 +647,16 @@ li:hover,
     color: rgba(0, 0, 0);
 }
 
-
 /* scrollbar */
 .scroll {
     height: 150px;
     overflow-y: auto;
 }
 
-
 /* align create playlist test */
 .create-playlist * {
     vertical-align: middle;
 }
-
 
 .home {
     filter: invert(0) brightness(0.8);
@@ -679,13 +667,11 @@ li:hover,
     filter: brightness(1);
 }
 
-
 /* play on album photos */
 
 .album-img {
     position: relative;
 }
-
 
 .album-img .fa-circle-play {
     opacity: 0;
@@ -699,7 +685,6 @@ li:hover,
 }
 
 .album-img img {
-    opacity: 1;
     transition: opacity .2s;
 
     display: block;
@@ -724,21 +709,16 @@ li:hover,
     width: 2.5vw;
 }
 
-
 .player .fa-circle-play:hover,
 .player .fa-shuffle:hover,
 .player .fa-arrow-rotate-right:hover {
     transform: scale(1.2);
 }
 
-
 .player:nth-of-type(1n+1) .fa-solid,
 .fa-regular {
     cursor: pointer;
 }
-
-
-
 
 /* test overlay */
 
@@ -749,7 +729,6 @@ li:hover,
 
     top: 0;
 }
-
 
 .overlay-img:hover {
     background-color: #000000a5;
