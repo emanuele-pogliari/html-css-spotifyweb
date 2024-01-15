@@ -40,18 +40,30 @@ h4 {
 }
 
 .main-window strong {
-    color: #7C7E83;
     display: block;
+
     padding-bottom: 30px;
+
+    color: #7C7E83;
 }
 
 li * {
     vertical-align: middle;
 }
 
+/* set opacity of hover element */
+li:not(.home, .logo),
+.player .favourite i,
+.install-app,
+.create-playlist {
+    transition: opacity .2s;
+
+    color: white;
+    opacity: 0.4;
+
+}
+
 /* end common elements */
-
-
 
 
 /* MAIN CONTAINER */
@@ -62,30 +74,21 @@ li * {
     height: calc(100vh - 90px);
 }
 
-/* set opacity of hover element */
-li:not(.home, .logo),
-.player .favourite i,
-.install-app,
-.create-playlist {
-    color: white;
-    opacity: 0.4;
-    transition: opacity .2s;
-}
-
-
 /* SIDEBAR */
 
 /* Main sidebar container */
 .sidebar {
-    width: 230px;
-    height: 100%;
-
-    background-color: #000;
-    color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
+    width: 230px;
+    height: 100%;
+
+    overflow: hidden;
+
+    background-color: #000;
+    color: white;
 }
 
 /* green side border */
@@ -100,6 +103,10 @@ li:not(.home, .logo),
 
 .sidebar .first-menu li:not(.home) {
     padding-left: 20px;
+}
+
+.logo .small-logo {
+    display: none;
 }
 
 /* end */
@@ -123,12 +130,10 @@ li:not(.home, .logo),
     width: 25px;
 }
 
-.first-menu li {
-    padding-bottom: 15px;
-}
 
 .first-menu li span {
     padding-left: 5px;
+
     font-size: 0.9e9;
 }
 
@@ -145,34 +150,45 @@ li:not(.home, .logo),
 
 .playlist-btn {
     display: inline-block;
+
     position: relative;
+
+    margin-right: 10px;
+
     width: 37px;
     height: 37px;
+
     background-color: gray;
-    margin-right: 10px;
     cursor: pointer;
 }
 
 .plus {
     position: absolute;
+
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
+
     color: black;
     font-size: 30px;
 }
 
 .playlist li {
     padding-bottom: 10px;
+
     font-size: 15px;
 }
 
 .add-playlist-btn {
+    display: inline;
+
+    padding: 10px;
+
     background-color: grey;
     color: black;
-    display: inline;
     font-size: 30px;
-    padding: 10px
+
 }
 
 /* MAIN WINDOW */
@@ -187,28 +203,34 @@ li:not(.home, .logo),
 .nav-list {
     display: flex;
     justify-content: center;
-    text-transform: uppercase;
     gap: 25px;
+
     margin: 25px auto 40px;
+
+    text-transform: uppercase;
 }
 
 .nav-list hr {
+    position: relative;
+
+    width: 30%;
+    left: 50%;
+
+    transform: translateX(-50%);
 
     border: #ADFF2F 1px solid;
-    width: 30%;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .card {
     width: calc(100% / 6 - 15px * 5 / 6);
+
     text-align: center;
 }
 
 .album-container {
     display: flex;
     gap: 15px;
+
     padding-bottom: 45px;
 }
 
@@ -217,9 +239,10 @@ li:not(.home, .logo),
 }
 
 .album-container h3 {
-    color: white;
     padding-top: 20px;
     padding-bottom: 10px;
+
+    color: white;
 }
 
 .album-container img {
@@ -257,14 +280,16 @@ li:not(.home, .logo),
 }
 
 .upgrade button {
+    padding: 15px 50px;
+
+    transition: all .2s ease;
+    transform: scale(1);
+
     background-color: #0000;
     color: white;
     text-transform: uppercase;
     border: 1px solid white;
-    padding: 15px 50px;
     border-radius: 25px;
-    transform: scale(1);
-    transition: all .2s ease;
     cursor: pointer;
 }
 
@@ -292,10 +317,10 @@ li:not(.home, .logo),
 /* test player flex-container */
 
 .flex-container {
-    width: calc(100% / 4);
     display: flex;
     align-items: center;
 
+    width: calc(100% / 4);
 }
 
 .flex-container:nth-of-type(2) {
@@ -319,9 +344,10 @@ li:not(.home, .logo),
 
 
 .favourite i {
+    transition: opacity .4s;
+
     font-size: 20px;
     opacity: .4;
-    transition: opacity .4s;
 }
 
 .favourite {
@@ -331,8 +357,8 @@ li:not(.home, .logo),
 
 .info-playback {
     display: flex;
-    gap: 20px;
     align-items: center;
+    gap: 20px;
 }
 
 .name-and-artist {
@@ -374,8 +400,10 @@ li:not(.home, .logo),
 
 .media-time .progress-bar {
     position: relative;
+
     width: 25vw;
     height: 4px;
+
     background-color: grey;
     border-radius: 25px;
 
@@ -398,6 +426,7 @@ li:not(.home, .logo),
 .volume-bar {
     width: 6vw;
     height: 4px;
+
     background-color: grey;
     border-radius: 25px;
 }
@@ -406,8 +435,6 @@ li:not(.home, .logo),
     justify-content: flex-end;
     gap: 10px
 }
-
-
 
 
 /* RESPONSIVE */
@@ -466,14 +493,8 @@ li:not(.home, .logo),
     }
 
     .first-menu,
-    .logo {
-        display: none;
-    }
-
-    .playlist {
-        display: none;
-    }
-
+    .logo,
+    .playlist,
     .install-app span,
     .username span,
     hr {
@@ -484,11 +505,13 @@ li:not(.home, .logo),
         width: calc(100% - 50px);
     }
 
+    .logo .small-logo {
+        display: inline-block;
+    }
+
 }
 
 /* END RESPONSIVE */
-
-
 
 
 
@@ -503,25 +526,30 @@ li:not(.home, .logo),
 
 
 .info-user hr {
-    border: none;
     margin: 10px 0;
+
+    border: none;
     background-color: #7C7E83;
 }
 
 .install-app img {
     width: 20px;
     height: 20px;
+
     margin-right: 5px;
+
     filter: invert(0) brightness(0.5);
 }
 
 .username img {
+    margin-right: 5px;
+
     width: 25px;
     height: 25px;
-    background-color: #7C7E83;
+
     filter: invert(0) brightness(1);
+    background-color: #7C7E83;
     border-radius: 50px;
-    margin-right: 5px;
 }
 
 .username *,
@@ -573,7 +601,7 @@ li:not(.home, .logo),
     background-color: white;
     height: 4px;
     border-radius: 2px;
-    transition: width 275s linear;
+    transition: width 5s linear;
 }
 
 

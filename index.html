@@ -18,7 +18,10 @@
 
         <div class="sidebar">
             <div>
-                <div class="logo"><img src="./img/logo.svg" alt=""></div>
+                <div class="logo">
+                    <img src="./img/logo.svg" alt="">
+                    <img class="small-logo" src="./img/logo-small.svg" alt="">
+                </div>
 
 
                 <ul class="first-menu">
@@ -28,7 +31,6 @@
                 </ul>
 
                 <ul class="toggle-icons">
-                    <li><img src="./img/logo-small.svg" alt=""></li>
                     <li><img src="./img/home.svg"></li>
                     <li><img src="./img/search.svg"></li>
                     <li><img src="./img/libreria.svg"></li>
@@ -211,7 +213,7 @@
             <div class="controls">
                 <i class="fa-solid fa-shuffle"></i>
                 <i class="fa-solid fa-backward-step"></i>
-                <i onclick="pincoPallino()" class="play fa-regular fa-circle-play"></i>
+                <i onclick="playSimulation()" class="play fa-regular fa-circle-play"></i>
                 <i class="fa-solid fa-forward-step"></i>
                 <i class="fa-solid fa-arrow-rotate-right"></i>
             </div>
@@ -244,11 +246,10 @@
     </div>
 
 
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        function pincoPallino() {
-            document.querySelector(".play-progress").style.width = "25vw";
+        function playSimulation() {
+            document.querySelector(".play-progress").style.width = "100%";
         }
     </script>
 </body>
