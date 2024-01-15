@@ -106,6 +106,7 @@ li:not(.home, .logo),
 }
 
 .logo .small-logo {
+    width: 100%;
     display: none;
 }
 
@@ -311,7 +312,6 @@ li:not(.home, .logo),
     padding-left: 10px;
     padding-right: 10px;
 }
-
 
 
 /* test player flex-container */
@@ -701,6 +701,8 @@ li:hover,
 .album-img img {
     opacity: 1;
     transition: opacity .2s;
+
+    display: block;
 }
 
 .album-img:hover img {
@@ -712,8 +714,8 @@ li:hover,
     opacity: 1;
 }
 
-.bg-test {
-    background-image: linear-gradient(#359351, #2a5a38, #050806, #121212);
+.main-background {
+    background-image: linear-gradient(#236236, #1f492b, #050806, #121212);
     padding: 90px 20px 0;
 }
 
@@ -733,4 +735,22 @@ li:hover,
 .player:nth-of-type(1n+1) .fa-solid,
 .fa-regular {
     cursor: pointer;
+}
+
+
+
+
+/* test overlay */
+
+.overlay-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+}
+
+
+.overlay-img:hover {
+    background-color: #000000a5;
 }
