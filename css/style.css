@@ -62,11 +62,11 @@ li * {
     height: calc(100vh - 90px);
 }
 
-/* DA RIVEDERE */
 /* set opacity of hover element */
 li:not(.home, .logo),
 .player .favourite i,
-.create-playlist span {
+.install-app,
+.create-playlist {
     color: white;
     opacity: 0.4;
     transition: opacity .2s;
@@ -181,11 +181,7 @@ li:not(.home, .logo),
 
     overflow-y: scroll;
     width: calc(100% - 230px);
-    padding-top: 90px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-image: linear-gradient(#523b9f, #1f173d, #15131d, #121212);
-    /* background-image: linear-gradient(#359351, #2a5a38, #050806, #121212); */
+
 }
 
 .nav-list {
@@ -214,6 +210,10 @@ li:not(.home, .logo),
     display: flex;
     gap: 15px;
     padding-bottom: 45px;
+}
+
+.album-img {
+    width: 100%;
 }
 
 .album-container h3 {
@@ -396,7 +396,7 @@ li:not(.home, .logo),
 /* text flex container right */
 
 .volume-bar {
-    width: 10vw;
+    width: 6vw;
     height: 4px;
     background-color: grey;
     border-radius: 25px;
@@ -503,8 +503,9 @@ li:not(.home, .logo),
 
 
 .info-user hr {
-    border-width: 0.5px;
+    border: none;
     margin: 10px 0;
+    background-color: #7C7E83;
 }
 
 .install-app img {
@@ -587,11 +588,13 @@ li:not(.home, .logo),
     cursor: pointer;
 }
 
-.progress-bar:hover .play-progress {
+.progress-bar:hover .play-progress,
+.volume-bar:hover .play-progress {
     background-color: #ADFF2F;
 }
 
-.progress-bar:hover .slider-pointer {
+.progress-bar:hover .slider-pointer,
+.volume-bar:hover .slider-pointer {
     opacity: 1;
 }
 
@@ -602,9 +605,9 @@ li:not(.home, .logo),
 
 
 li:hover,
-.install-app span:hover,
+.install-app:hover,
 .favourite i:hover,
-.create-playlist:hover span {
+.create-playlist:hover {
     color: white;
     opacity: 1;
     cursor: pointer;
@@ -663,6 +666,7 @@ li:hover,
     left: 50%;
     color: white;
     transform: translate(-50%, -50%);
+    width: 100%;
     font-size: 60px;
 }
 
@@ -678,4 +682,27 @@ li:hover,
 
 .album-img:hover .fa-circle-play {
     opacity: 1;
+}
+
+.bg-test {
+    background-image: linear-gradient(#359351, #2a5a38, #050806, #121212);
+    padding: 90px 20px 0;
+}
+
+
+.volume-bar .play-progress {
+    width: 2.5vw;
+}
+
+
+.player .fa-circle-play:hover,
+.player .fa-shuffle:hover,
+.player .fa-arrow-rotate-right:hover {
+    transform: scale(1.2);
+}
+
+
+.player:nth-of-type(1n+1) .fa-solid,
+.fa-regular {
+    cursor: pointer;
 }
