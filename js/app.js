@@ -1,5 +1,7 @@
-var prova = document.querySelector(".test"); //sarebbe il tasto play
+var prova = document.querySelector("#play-js");
 
-prova.onclick = function () {
-    document.querySelector(".play-progress").style.width = "100%"; //la barra di progressione
-}
+prova.addEventListener("click", function () {
+    document.querySelector(".play-progress").style.width = "100%";
+    document.getElementById("play-js").classList.toggle('fa-circle-play');
+    document.getElementById("play-js").classList.toggle('fa-circle-pause');
+});

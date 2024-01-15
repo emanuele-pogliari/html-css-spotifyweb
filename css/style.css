@@ -424,7 +424,8 @@ li:not(.home, .logo),
     color: #FFF;
 }
 
-.player .fa-circle-play {
+.player .fa-circle-play,
+.player .fa-circle-pause {
     font-size: 30px;
 }
 
@@ -706,12 +707,13 @@ li:hover,
 
 
 .volume-bar .play-progress {
-    width: 2.5vw;
+    width: 25%;
 }
 
 .player .fa-circle-play:hover,
 .player .fa-shuffle:hover,
-.player .fa-arrow-rotate-right:hover {
+.player .fa-arrow-rotate-right:hover,
+.player .fa-circle-pause:hover {
     transform: scale(1.2);
 }
 
